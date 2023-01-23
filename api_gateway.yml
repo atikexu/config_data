@@ -1,0 +1,31 @@
+server:
+  port: 8011
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eurekaserver:
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #indica que la puerta de enlace habilita la funcion de registro y descubrimiento de servicios
+      routes:
+        - id: clients
+          uri: lb://clients
+          predicates:
+            - Path=/clients/**
+        - id: credits
+          uri: lb://credits
+          predicates:
+            - Path=/credits/**
+        - id: accounts
+          uri: lb://accounts
+          predicates:
+            - Path=/accounts/**
+        - id: transactions
+          uri: lb://transactions
+          predicates:
+            - Path=/transactions/**
