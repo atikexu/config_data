@@ -14,18 +14,18 @@ spring:
           enabled: true #indica que la puerta de enlace habilita la funcion de registro y descubrimiento de servicios
       routes:
         - id: clients
-          uri: lb://clients
+          uri: lb://CLIENTS
           predicates:
             - Path=/clients/**
         - id: credits
-          uri: lb://credits
+          uri: lb://CREDITS
           predicates:
             - Path=/credits/**
         - id: accounts
-          uri: lb://accounts
+          uri: lb://ACCOUNTS
           predicates:
             - Path=/accounts/**
         - id: transactions
-          uri: lb://transactions
+          uri: lb://TRANSACTIONS
           predicates:
             - Path=/transactions/**
