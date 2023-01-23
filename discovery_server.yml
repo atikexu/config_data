@@ -6,3 +6,8 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health
